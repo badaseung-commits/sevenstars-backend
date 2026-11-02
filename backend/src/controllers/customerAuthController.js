@@ -35,7 +35,7 @@ async function customerLogin(req, res) {
   const token = jwt.sign(
     { user_id: user.id, customer_id: user.customer_id, company_name: user.company_name, is_main: user.is_main },
     process.env.JWT_SECRET,
-    { expiresIn: '8h' }
+    { expiresIn: '30d' }
   );
 
   // Show the quiz only if this user hasn't completed it AND the company has no
